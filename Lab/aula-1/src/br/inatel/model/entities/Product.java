@@ -4,6 +4,8 @@ public class Product {
 	private String name;
 	private double price;
 	
+	private double total;
+
 	public Product(String name, double price) {
 		this.name = name;
 		this.price = price;
@@ -29,5 +31,11 @@ public class Product {
 		this.price = price;
 	}
 	
-	
+	public double getTotal() {
+		return total;
+	}
+
+	public void setTotal(double total) {
+		this.total = total;
+	}
 }
