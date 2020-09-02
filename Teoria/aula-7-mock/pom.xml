@@ -3,15 +3,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.inatel.cdg</groupId>
-	<artifactId>aula-junit</artifactId>
+	<artifactId>aula-7-mock</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.13</version>
-			<scope>test</scope>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.6</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
