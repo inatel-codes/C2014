@@ -19,7 +19,7 @@ As seguintes bibliotecas estão sendo utilizadas na construção do projeto:
 ## Ferramentas
 As seguintes ferramentas estão sendo utilizadas na construção do projeto:
   - [Maven](https://maven.apache.org/)
-
+  - [JUnit](https://junit.org/)
 ## Como usar?
 
 ## Requisitos
