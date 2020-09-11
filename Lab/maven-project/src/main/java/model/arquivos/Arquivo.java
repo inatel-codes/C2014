@@ -31,6 +31,7 @@ public class Arquivo {
 		}
 	}
 
+
 	public static void gerarCsv(List<Investimento> investimentos) {
 		file = new File("investimentos.csv");
 		
@@ -60,4 +61,13 @@ public class Arquivo {
 			ex.printStackTrace();
 		}
 	}
+	
+	public static File getFile() {
+		return file;
+	}
+
+	public static FileWriter getFileWriter() {
+		return fileWriter;
+	}
+
 }
