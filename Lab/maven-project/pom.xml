@@ -12,6 +12,7 @@
 	</properties>
 
 	<dependencies>
+
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
@@ -30,6 +31,7 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -67,6 +69,9 @@
 					</execution>
 				</executions>
 			</plugin>
+
+
 		</plugins>
 	</build>
+
 </project>
