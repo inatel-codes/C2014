@@ -17,12 +17,20 @@ public class AchievmentMessage {
 		}
 		
 		for (AchievMsgReceiver achievMsgReceiver : receivers) {
-			achievMsgReceiver.msgReceiver(mensagem);
+			try {
+				achievMsgReceiver.msgReceiver(mensagem);
+			} catch (Exception e) {
+				e.getMessage();
+			}
 		}
 	}
 
 	public void registrarRecebedor(AchievMsgReceiver receiver) {
 		receivers.add(receiver);
+	}
+
+	public void removerRecebedor(AchievMsgReceiver receiver) {
+		receivers.remove(receiver);
 	}
 
 }
