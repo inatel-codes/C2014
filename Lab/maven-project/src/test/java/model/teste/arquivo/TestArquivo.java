@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import model.arquivos.Arquivo;
+import model.arquivos.CsvStrategy;
 import model.entities.Carteira;
 import model.entities.RendaFixa;
 
@@ -19,13 +20,15 @@ public class TestArquivo {
 	private File csvFile;
 	private Carteira carteira;
 	private RendaFixa rendaFixa;
-
+	private Arquivo arquivo;
+	
 	@Before
 	public void beforeTeste() {
 		carteira = new Carteira("Rico investimentos");
 		rendaFixa = new RendaFixa("Tesouro Selic 2025", new Date(), 78.65, 50, "20/10/2025", 2.75);
 		jsonFile = new File("investimentos.json");
 		csvFile = new File("investimentos.csv");
+		arquivo = new Arquivo();
 	}
 
 	@Test
@@ -46,17 +49,18 @@ public class TestArquivo {
 	public void testeGerouArquivoJson() {
 		carteira.getInvestimentos().add(rendaFixa);
 
-		Arquivo.gerarJson(carteira.getInvestimentos());
-
-		assertNotNull(Arquivo.getFileWriter());
+		arquivo.gerar(carteira.getInvestimentos());
+		
+		assertNotNull(arquivo.getArquivoStrategy().getFileWriter());
 	}
 
 	@Test
 	public void testeGerouArquivoCsv() {
 		carteira.getInvestimentos().add(rendaFixa);
 
-		Arquivo.gerarCsv(carteira.getInvestimentos());
+		arquivo.setArquivoStrategy(new CsvStrategy());
+		arquivo.gerar(carteira.getInvestimentos());
 
-		assertNotNull(Arquivo.getFile());
+		assertNotNull(arquivo.getArquivoStrategy().getFileWriter());
 	}
 }
